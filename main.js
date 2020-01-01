@@ -66,6 +66,12 @@ function winner(firstPlayerMove, secondPlayerMove) {
         return 2;
     }
 }
+/**
+ * Start the game from the beggining and erase progress.
+ */
+function restart() {
+    numTies = playerWins = computerWins = 0;
+}
 let numTies = 0;
 let playerWins = 0;
 let computerWins = 0;
