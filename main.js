@@ -1,8 +1,7 @@
 /**
  * Play one round of rock paper scissors.
  * 
- * @param {number} playerMove A move ranging from 1 to 3 
- *                            for rock, paper, or scissors.
+ * @param {number} playerMove User's choice of rock, paper, or scissors.
  */
 function round(playerMove){
     let result = winner(playerMove, randomMove());
@@ -24,7 +23,21 @@ function round(playerMove){
 function randomMove() {
     return Math.floor(Math.random()*2) + 1;
 }
-
+/**
+ * Returns the string representation of 1, 2, or 3.
+ * 
+ * @param {number} move A move ranging from 1 to 3 for rock, paper, or scissors.
+ */
+function moveToString(move) {
+    if (move === ROCK) {
+        return "ROCK";
+    } else if (move == PAPER) {
+        return "PAPER";
+    } else if (move == SCISSOS) {
+        return "SCISSORS";
+    }
+    throw "not a move";
+}
 /**
  * Returns 0 if there is a tie, 1 if the winning move is by firstPlayerMove 
  * and returns 2 otherwise.
