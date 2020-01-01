@@ -4,7 +4,10 @@
  * @param {number} playerMove User's choice of rock, paper, or scissors.
  */
 function round(playerMove){
-    let result = winner(playerMove, randomMove());
+    let computerMove = randomMove();
+    console.log("Your move: " + moveToString(playerMove));
+    console.log("Computer move: " + moveToString(computerMove));
+    let result = winner(playerMove, computerMove);
     if (result === 0) {
         ++numTies;
         return "tie";
@@ -30,11 +33,11 @@ function randomMove() {
  */
 function moveToString(move) {
     if (move === ROCK) {
-        return "ROCK";
+        return "rock";
     } else if (move == PAPER) {
-        return "PAPER";
-    } else if (move == SCISSOS) {
-        return "SCISSORS";
+        return "paper";
+    } else if (move == SCISSORS) {
+        return "scissors";
     }
     throw "not a move";
 }
