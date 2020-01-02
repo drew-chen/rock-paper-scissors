@@ -11,13 +11,14 @@ h1 {
 }
 h2 {
     margin-top: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+p {
+    min-height: 21px;
 }
 #content {
     align-self: center;
     display: flex;
-    position: relative;
-    right: 30px;
 }
 #all-options {
     display:flex;
@@ -30,11 +31,11 @@ h2 {
     margin: 20px;
 }
 #all-results {
-    overflow: hidden;
     align-self: center;
-    text-align: left;
     font-size: 25px;
-    min-width: 235px;
+    min-width: 240px;
+    text-align: left;
+
 }
 .display-counts {
     color: darksalmon;

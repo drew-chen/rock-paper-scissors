@@ -11,6 +11,9 @@ const SCISSORS_BUTTON = document.getElementById("scissors");
 const PLAYER_WIN_COUNT_DISPLAY = document.getElementById("player-win-count");
 const COMPUTER_WIN_COUNT_DISPLAY = document.getElementById("computer-win-count");
 const TIE_COUNT_DISPLAY = document.getElementById("ties-count");
+const PLAYER_MOVE_DISPLAY = document.getElementById("player-move");
+const COMPUTER_MOVE_DISPLAY = document.getElementById("computer-move");
+const RESULT_MESSAGE_DISPLAY = document.getElementById("result-message");
 const RESTART_BUTTON = document.getElementById("restart");
 /**
  * Play one round of rock paper scissors.
@@ -19,18 +22,18 @@ const RESTART_BUTTON = document.getElementById("restart");
  */
 function round(playerMove){
     let computerMove = randomMove();
-    console.log("Your move: " + moveToString(playerMove));
-    console.log("Computer move: " + moveToString(computerMove));
+    console.log("Player: " + moveToString(playerMove));
+    console.log("Computer: " + moveToString(computerMove));
     let result = winner(playerMove, computerMove);
     if (result === 0) {
         ++numTies;
         return "tie";
     } else if (result === 1) {
         ++playerWins; 
-        return "You win!";
+        return "you win!";
     } else if (result === 2) {
         ++computerWins;
-        return "You lose :(";
+        return "you lose :(";
     }
 }
 /**
@@ -83,31 +86,29 @@ function winner(firstPlayerMove, secondPlayerMove) {
         return 2;
     }
 }
-function updateCountDisplay() {
+/** Updates all displayed inner text with current values. */
+function updateDisplay(resultMessage) {
     PLAYER_WIN_COUNT_DISPLAY.innerText = playerWins;
     COMPUTER_WIN_COUNT_DISPLAY.innerText = computerWins;
     TIE_COUNT_DISPLAY.innerText = numTies;
+    RESULT_MESSAGE_DISPLAY.innerText = resultMessage; 
 }
 /** Play a round where the chooses rock. */
 ROCK_BUTTON.onclick = function() {
-    round(ROCK);    
-    updateCountDisplay();
+    updateDisplay(round(ROCK));    
 }
 /** Play a round where the chooses paper. */
 PAPER_BUTTON.onclick = function() {
-    round(PAPER);
-    updateCountDisplay();
+    updateDisplay(round(PAPER));
 }
 /** Plays a round where the chooses scissors. */
 SCISSORS_BUTTON.onclick = function() {
-    round(SCISSORS);
+    updateDisplay(round(SCISSORS));
     updateCountDisplay();
 }
-/**
- * Start the game from the begining and erase progress.
- */
+/** Start the game from the begining and erase progress. */
 RESTART_BUTTON.onclick = function() {
     numTies = playerWins = computerWins = 0;
-    updateCountDisplay();
+    updateDisplay("");
 }
 
