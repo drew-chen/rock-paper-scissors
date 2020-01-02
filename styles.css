@@ -65,8 +65,8 @@ img {
     transition-duration: 0.5s;
     border: none;
 }
-span {
-    padding: 0;
+#your-win-count, #computer-win-count, #tie-count {
+    display: none;
 }
 
 #button-restart {

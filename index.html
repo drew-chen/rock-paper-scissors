@@ -3,7 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
     <link href="styles.css" rel="stylesheet" type="text/css">
-
+    <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
 </head>
 
@@ -22,7 +22,6 @@
             </button>
             <button id="scissors" class="option button">
                 <span>scissors</span>
-
                 <img src="images/scissors.svg" alt="scissors" height="120" width="120">
             </button>
         </div>
@@ -33,15 +32,15 @@
         <table id="all-results">
             <tr>
                 <td> Your wins: </td>
-                <td class="display-counts"></td> 
+                <td id="player-win-count"></td> 
             </tr>
             <tr>
                 <td> Computer wins: </td>
-                <td class="display-counts"></td> 
+                <td id="computer-win-count"></td> 
             </tr>
             <tr>
                 <td> Ties: </td>
-                <td class="display-counts"></td> 
+                <td class="ties-count"></td> 
             </tr>
         </table>
     </div>
