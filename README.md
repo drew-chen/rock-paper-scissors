@@ -2,7 +2,7 @@
 
 
 
-![screenshot preview of website](images/crop.png)
+![screenshot preview of website](images/screenshot.png)
 
 
 Images sources:
