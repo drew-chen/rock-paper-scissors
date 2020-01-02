@@ -3,6 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
     <link href="styles.css" rel="stylesheet" type="text/css">
+
     <title>Rock Paper Scissors</title>
 </head>
 
@@ -14,13 +15,26 @@
         // todo
     </script>
     <div id="content">
-        <div id="options">
-            <img class="option" src="images/rock.svg" alt="rock" height="120" width="120">
-            <img class="option" src="images/paper.svg" alt="paper" height="120" width="120">
-            <img class="option" src="images/scissors.svg" alt="scissors" height="120" width="120">
+        <div id="all-options">
+            <button id="rock" class="button option ">
+                <span>rock</span>
+                <img src="images/rock.svg" alt="rock" height="120" width="120">
+            </button>
+            <button id="paper" class="option button">
+                <span>paper</span>
+                <img src="images/paper.svg" alt="paper" height="120" width="120">
+            </button>
+            <button id="scissors" class="option button">
+                <span>scissors</span>
+
+                <img src="images/scissors.svg" alt="scissors" height="120" width="120">
+            </button>
         </div>
         <div id="vertical-line"></div>
-        <table id="results">
+        <!-- todo: text ontop of table showing what you choose, what the player chose, and the winner -->
+        <div id="result"></div>
+        <!-- todo: hide when game is restarted -->
+        <table id="all-results">
             <tr>
                 <td> Your wins: </td>
                 <td class="display-counts"></td> 
@@ -36,7 +50,7 @@
         </table>
     </div>
     <div>
-        <button id="button-restart"type="button">restart</button>
+        <button id="button-restart" class="button" type="button">restart</button>
     </div>
 </body>
 

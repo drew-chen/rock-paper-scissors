@@ -11,13 +11,15 @@ h1 {
 }
 h2 {
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 #content {
     align-self: center;
     display: flex;
+    position: relative;
+    right: 20px;
 }
-#options {
+#all-options {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +29,7 @@ h2 {
 
     margin: 20px;
 }
-#results {
+#all-results {
     align-self: center;
     text-align: left;
     font-size: 25px;
@@ -38,13 +40,13 @@ h2 {
 img {
     margin: 20px;
 }
-.option {
-    display: relative;
-}
-button {
-    width: 80px;
-    margin: 20px;
-    padding: 5px;
+
+.button {
+    width: 240px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: none;
     border: 2px solid darksalmon;
     border-radius: 3px;
     background-color: transparent;
@@ -52,13 +54,24 @@ button {
     font-size: 14px;
     font-weight: bold;
     transition-duration: 0.3s;
+    margin-bottom: 10px;
 }
-button:hover {
+.button:hover {
     transition-duration: 0.3s;
     background-color: darksalmon;
     color: white;
 }
+.button.option {
+    transition-duration: 0.5s;
+    border: none;
+}
+span {
+    padding: 0;
+}
+
 #button-restart {
-    position: relative;
-    right: 13px;
+    width: 80px;
+    margin: 20px;
+    padding: 5px;
+
 }

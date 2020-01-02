@@ -70,14 +70,27 @@ function winner(firstPlayerMove, secondPlayerMove) {
     }
 }
 /**
- * Start the game from the beggining and erase progress.
+ * Start the game from the begining and erase progress.
  */
-function restart() {
+function start() {
+    started = true;
     numTies = playerWins = computerWins = 0;
 }
+document.getElementById("#rock").onclick = function() {
+    round(ROCK);
+}
+document.getElementById("#paper").onclick = function() {
+    round(PAPER);
+}
+document.getElementById("#scissors").onclick = function() {
+    round(SCISSORS);
+}
+
 let numTies = 0;
 let playerWins = 0;
 let computerWins = 0;
+let started = false;
 const ROCK = 1;
 const PAPER = 2;
 const SCISSORS = 3;
+const ROCK_BUTTON = document.querySelector("#rock");
