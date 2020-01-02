@@ -11,7 +11,7 @@ const SCISSORS_BUTTON = document.getElementById("scissors");
 const PLAYER_WIN_COUNT_DISPLAY = document.getElementById("player-win-count");
 const COMPUTER_WIN_COUNT_DISPLAY = document.getElementById("computer-win-count");
 const TIE_COUNT_DISPLAY = document.getElementById("ties-count");
-
+const RESTART_BUTTON = document.getElementById("restart");
 /**
  * Play one round of rock paper scissors.
  * 
@@ -88,24 +88,26 @@ function updateCountDisplay() {
     COMPUTER_WIN_COUNT_DISPLAY.innerText = computerWins;
     TIE_COUNT_DISPLAY.innerText = numTies;
 }
-/**
- * Start the game from the begining and erase progress.
- */
-function restart() {
-    started = true;
-    numTies = playerWins = computerWins = 0;
-    updateCountDisplay();
-}
+/** Play a round where the chooses rock. */
 ROCK_BUTTON.onclick = function() {
     round(ROCK);    
     updateCountDisplay();
 }
+/** Play a round where the chooses paper. */
 PAPER_BUTTON.onclick = function() {
     round(PAPER);
     updateCountDisplay();
 }
+/** Plays a round where the chooses scissors. */
 SCISSORS_BUTTON.onclick = function() {
     round(SCISSORS);
-    updateCountDisplay;
+    updateCountDisplay();
+}
+/**
+ * Start the game from the begining and erase progress.
+ */
+RESTART_BUTTON.onclick = function() {
+    numTies = playerWins = computerWins = 0;
+    updateCountDisplay();
 }
 
