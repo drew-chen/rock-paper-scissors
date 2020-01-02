@@ -30,9 +30,11 @@ h2 {
     margin: 20px;
 }
 #all-results {
+    overflow: hidden;
     align-self: center;
     text-align: left;
     font-size: 25px;
+    min-width: 235px;
 }
 .display-counts {
     color: darksalmon;
@@ -64,9 +66,6 @@ img {
 .button.option {
     transition-duration: 0.5s;
     border: none;
-}
-#your-win-count, #computer-win-count, #tie-count {
-    display: none;
 }
 
 #button-restart {
