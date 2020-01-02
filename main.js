@@ -1,7 +1,6 @@
 let numTies = 0;
 let playerWins = 0;
 let computerWins = 0;
-let started = false;
 const ROCK = 1;
 const PAPER = 2;
 const SCISSORS = 3;
@@ -11,8 +10,6 @@ const SCISSORS_BUTTON = document.getElementById("scissors");
 const PLAYER_WIN_COUNT_DISPLAY = document.getElementById("player-win-count");
 const COMPUTER_WIN_COUNT_DISPLAY = document.getElementById("computer-win-count");
 const TIE_COUNT_DISPLAY = document.getElementById("ties-count");
-const PLAYER_MOVE_DISPLAY = document.getElementById("player-move");
-const COMPUTER_MOVE_DISPLAY = document.getElementById("computer-move");
 const RESULT_MESSAGE_DISPLAY = document.getElementById("result-message");
 const RESTART_BUTTON = document.getElementById("restart");
 /**
@@ -44,7 +41,7 @@ function randomMove() {
     return Math.round(Math.random()*3) + 1;
 }
 /**
- * Returns the string representation of 1, 2, or 3.
+ * Returns the move (string) representation of 1, 2, or 3.
  * 
  * @param {number} move A move ranging from 1 to 3 for rock, paper, or scissors.
  */
@@ -104,9 +101,8 @@ PAPER_BUTTON.onclick = function() {
 /** Plays a round where the chooses scissors. */
 SCISSORS_BUTTON.onclick = function() {
     updateDisplay(round(SCISSORS));
-    updateCountDisplay();
 }
-/** Start the game from the begining and erase progress. */
+/** Start the game from the beginning and erase progress. */
 RESTART_BUTTON.onclick = function() {
     numTies = playerWins = computerWins = 0;
     updateDisplay("");
